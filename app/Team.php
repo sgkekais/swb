@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    //
     /**
      * The table associated with the model.
      *
@@ -28,5 +27,22 @@ class Team extends Model
         'ah'
     ];
 
+    /***********************************************
+     * RELATIONSHIPS
+     */
 
+    public function matchesHome ()
+    {
+        return $this->hasMany(Match::class, 'team_id_home');
+    }
+
+    public function matchesAway ()
+    {
+        return $this->hasMany(Match::class, 'team_id_away');
+    }
+
+    public function matches ()
+    {
+        return $this->matchesHome()->merge($this->matchesAway());
+    }
 }
