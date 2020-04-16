@@ -25,4 +25,13 @@ class location extends Model
         'is_stadium',
         'url'
     ];
+
+    /***********************************************
+     * RELATIONSHIPS
+     */
+
+    public function dates ()
+    {
+        return $this->hasMany('App\Date');
+    }
 }

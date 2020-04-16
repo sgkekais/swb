@@ -23,4 +23,13 @@ class Tournament extends Model
         'description',
         'position'
     ];
+
+    /***********************************************
+     * RELATIONSHIPS
+     */
+
+    public function date ()
+    {
+        return $this->belongsTo('App\Date');
+    }
 }

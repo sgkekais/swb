@@ -22,4 +22,18 @@ class Assist extends Model
         'goal_id',
         'user_id',
     ];
+
+    /***********************************************
+     * RELATIONSHIPS
+     */
+
+    public function player ()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function goal ()
+    {
+        return $this->belongsTo('App\Goal');
+    }
 }

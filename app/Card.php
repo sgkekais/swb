@@ -31,11 +31,11 @@ class Card extends Model
 
     public function player ()
     {
-        return $this->hasOne(User::class, 'user_id');
+        return $this->belongsTo('App\User');
     }
 
     public function match ()
     {
-        return $this->hasOne(Match::class, 'match_id');
+        return $this->belongsTo('App\Match');
     }
 }

@@ -30,4 +30,24 @@ class Date extends Model
         'cancelled',
         'published'
     ];
+
+    /***********************************************
+     * RELATIONSHIPS
+     */
+
+    public function location ()
+    {
+        return $this->belongsTo('App\Location');
+    }
+
+    public function match ()
+    {
+        return $this->hasOne('App\Match');
+    }
+
+    public function tournament ()
+    {
+        return $this->hasOne('App\Tournament');
+    }
+
 }

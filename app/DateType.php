@@ -21,4 +21,13 @@ class DateType extends Model
     protected $fillable = [
         'description'
     ];
+
+    /***********************************************
+     * RELATIONSHIPS
+     */
+
+    public function dates ()
+    {
+        return $this->hasMany('App\Date');
+    }
 }

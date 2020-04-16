@@ -38,4 +38,28 @@ class Match extends Model
         'published',
         'cancelled'
     ];
+
+    /***********************************************
+     * SCOPES
+     */
+
+    /***********************************************
+     * RELATIONSHIPS
+     */
+
+    public function date () {
+        return $this->belongsTo('App\Date');
+    }
+
+    public function matchType () {
+        return $this->belongsTo('App\MatchType');
+    }
+
+    public function cards () {
+        return $this->hasMany('App\Card' );
+    }
+
+    public function goals () {
+        return $this->hasMany('App\Goal');
+    }
 }

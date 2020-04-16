@@ -24,4 +24,23 @@ class Goal extends Model
         'score',
         '11m'
     ];
+
+    /***********************************************
+     * RELATIONSHIPS
+     */
+
+    public function player ()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function match ()
+    {
+        return $this->belongsTo('App\Match');
+    }
+
+    public function assist ()
+    {
+        return $this->hasOne('App\Assist');
+    }
 }
