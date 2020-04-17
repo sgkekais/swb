@@ -19,7 +19,8 @@ class MatchType extends Model
      * @var array
      */
     protected $fillable = [
-        ''
+        'description',
+        'description_short',
     ];
 
     /***********************************************

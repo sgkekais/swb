@@ -17,6 +17,7 @@ class User extends \TCG\Voyager\Models\User
      */
     protected $fillable = [
         'name', 'email', 'password',
+        'first_name', 'last_name', 'date_of_birth', 'banned'
     ];
 
     /**
@@ -36,4 +37,14 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /***********************************************
+     * RELATIONSHIPS
+     */
+
+    public function player ()
+    {
+        return $this->hasOne('App\Player');
+    }
+
 }

@@ -50,4 +50,9 @@ class Date extends Model
         return $this->hasOne('App\Tournament');
     }
 
+    public function dateType ()
+    {
+        return $this->belongsTo('App\DateType');
+    }
+
 }
